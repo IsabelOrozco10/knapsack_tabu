@@ -9,3 +9,5 @@ setup(name='knapsack_tabu',
       license='MIT',
       packages=['knapsack_tabu'],
       zip_safe=False)
+
+      
