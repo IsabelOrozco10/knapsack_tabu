@@ -1,7 +1,0 @@
-setup.py
-knapsack_tabu/__init__.py
-knapsack_tabu.egg-info/PKG-INFO
-knapsack_tabu.egg-info/SOURCES.txt
-knapsack_tabu.egg-info/dependency_links.txt
-knapsack_tabu.egg-info/not-zip-safe
-knapsack_tabu.egg-info/top_level.txt
