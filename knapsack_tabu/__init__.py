@@ -12,10 +12,10 @@ class ProblemaMochila:
         return [self.ítems[i] for i in range(len(vector)) if vector[i] == 1]
 
     def vector_utilidades(self, vector):
-        return np.array([list(self.utilidades.values())[i] for i in range(len(self.utilidades)) if vector[i] == 1])
+        return np.array([list(self.utilidades.values())[i] if vector[i] == 1 else 0 for i in range(len(self.utilidades))])
 
     def vector_pesos(self, vector):
-        return np.array([list(self.pesos.values())[i] for i in range(len(self.pesos)) if vector[i] == 1])
+        return np.array([list(self.pesos.values())[i] if vector[i] == 1 else 0 for i in range(len(self.pesos))])
 
     def generar_solucion_aleatoria(num_items):
         return np.array([random.randint(0, 1) for _ in range(num_items)])
