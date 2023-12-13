@@ -6,8 +6,8 @@ KnapSack_TabuSearch es una librería en Python que implementa el algoritmo de b�
 El algoritmo de búsqueda tabú es una técnica de optimización que busca encontrar la mejor combinación de elementos para llenar una mochila con una capacidad limitada, maximizando el valor total de los elementos seleccionados sin exceder el límite de peso.
 
 Integrantes:
-Alejandro Bigvai 
-Daira Yalín Hernández Cortés
-Isabel Orozco Chavez
-Marcos Jesús Nicolás Romero
+Alejandro Bigvai, 
+Daira Yalín Hernández Cortés,
+Isabel Orozco Chavez,
+Marcos Jesús Nicolás Romero,
 Yadhira Villeda
