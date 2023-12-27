@@ -32,7 +32,7 @@ class ProblemaMochila:
     def utilidad(self, vector):
         return self.utilidades.dot(vector)
     
-    def tabu_search(self, self.pesos, self.utilidades, capacidad_mochila, max_iter=20, L=8):
+    def tabu_search(self, capacidad_mochila, max_iter=20, L=8):
         tabu_list = []
         c = 1
         X = generar_solucion_aleatoria(self.num_items)
@@ -50,7 +50,7 @@ class ProblemaMochila:
                 i_posible = mejor_cambio(N, X)
                 tabu_list.append(i_posible)
                 X[i_posible] = 1-X[i_posible]
-                if X[i_posible] = 1:
+                if X[i_posible] == 1:
                     Curl_W = Curl_W + self.pesos[i_posible]
                 else:
                     Curl_W = Curl_W - self.pesos[i_posible]
