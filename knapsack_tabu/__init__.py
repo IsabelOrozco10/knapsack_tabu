@@ -6,7 +6,7 @@ class ProblemaMochila:
         self.utilidades = np.array([list(utilidades.values())[i] for i in range(len(utilidades))])
         self.pesos = np.array([list(pesos.values())[i] for i in range(len(pesos))])
         self.límite = límite
-        self.num_items = len(items)
+        self.num_items = len(self.ítems)
 
     def vector_ítems(self, vector):
         return [self.ítems[i] for i in range(len(vector)) if vector[i] == 1]
@@ -18,11 +18,11 @@ class ProblemaMochila:
         return np.array([list(self.pesos.values())[i] for i in range(len(self.pesos))])
 
     def generar_solucion_aleatoria(num_items):
-        return np.array([random.randint(0, 1) for _ in range(num_items)])
+        return np.array([random.randint(0, 1) for _ in range(self.num_items)])
 
     def mejor_cambio(self, indices, v_actual):
         i_best = indices[0]
-        u_best = (self.utilidades[0]/self.pesos[0])**(v_atual[0])
+        u_best = (self.utilidades[0]/self.pesos[0])**(v_actual[0])
         for i in indices:
             u_i = (self.utilidades[i]/self.pesos)**(v_actual[i])
             if u_i > u_best:
