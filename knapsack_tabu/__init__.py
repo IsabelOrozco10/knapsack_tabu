@@ -11,19 +11,25 @@ class ProblemaMochila:
     def vector_ítems(self, vector):
         """
         Esta método permite conocer la lista de objetos que representa un vector binario.
-        Parametros
-        ----------
-        vector : array
-            Vector binario que representa una lista de objetos.
-
-        Returns
-        -------
-        list
-            Lista de objetos que reprenta el vector binario.
+        
+        Parametros:
+            vector(array): Vector binario que representa una lista de objetos.
+            
+        Returns:
+            list: Lista de objetos que reprenta el vector binario.
         """
         return [self.ítems[i] for i in range(len(vector)) if vector[i] == 1]
 
     def generar_solucion_aleatoria(self):
+        """
+        Genera una solución aleatoria para el problema.
+
+        Esta función crea una solución aleatoria representada como un array de NumPy
+        de 0s y 1s, donde cada elemento indica si el ítem correspondiente está incluido o no.
+
+        Returns:
+        numpy.ndarray: Un array de NumPy que representa la solución aleatoria.
+        """
         return np.array([random.randint(0, 1) for _ in range(self.num_items)])
 
     def mejor_cambio(self, indices, v_actual):
