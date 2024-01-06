@@ -87,7 +87,7 @@ class ProblemaMochila:
                 - Peso total de la mejor solución.
                 - Utilidad total de la mejor solución.
         """
-        tabu_list = set()
+        tabu_list = []
         c = 1
         X = self.generar_solucion_aleatoria()
         X_best = X.copy()
