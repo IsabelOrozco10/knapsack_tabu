@@ -71,6 +71,22 @@ class ProblemaMochila:
         return self.utilidades.dot(vector)
     
     def tabu_search(self, max_iter=20, L=8):
+        """
+        Realiza una búsqueda tabú para encontrar una solución óptima.
+
+        Esta función implementa un algoritmo de búsqueda tabú para encontrar una solución
+        óptima para el problema, considerando restricciones de peso y utilidad.
+
+        Args:
+            -max_iter (int): Número máximo de iteraciones para el algoritmo (por defecto, 20).
+            -L (int): Longitud máxima de la lista tabú (por defecto, 8).
+
+        Returns:
+            Tuple[numpy.ndarray, float, float]:
+                - La mejor solución encontrada (array binario).
+                - Peso total de la mejor solución.
+                - Utilidad total de la mejor solución.
+        """
         tabu_list = set()
         c = 1
         X = self.generar_solucion_aleatoria()
