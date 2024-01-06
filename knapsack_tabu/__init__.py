@@ -33,15 +33,41 @@ class ProblemaMochila:
         return np.array([random.randint(0, 1) for _ in range(self.num_items)])
 
     def mejor_cambio(self, indices, v_actual):
+         """
+        Encuentra el índice que representa la mejor opción de cambio en función de utilidades y pesos.
+
+        Esta función toma una lista de índices `indices` y un array `v_actual` que representa
+        la configuración actual del problema. Evalúa las opciones en términos de utilidades y
+        pesos, y devuelve el índice de la mejor opción de cambio.
+
+        Args:
+            -indices (list): Lista de índices disponibles para evaluar.
+            -v_actual (numpy.ndarray): Array que representa la configuración actual del problema.
+
+        Returns:
+            -int: Índice de la mejor opción de cambio.
+        """
+        #Inicializar el índice y la utilidad del mejor cambio con el primer índice del conjunto.
         i_best = indices[0]
         u_best = (self.utilidades[i_best]/self.pesos[i_best])*((-1)**(v_actual[i_best]))
+        # Iterar sobre los índices restantes y actualizar el índice del mejor cambio si se encuentra una utilidad mejor.
         for i in indices:
+            # Calcular la utilidad para el índice actual.
             u_i = (self.utilidades[i]/self.pesos[i])*((-1)**(v_actual[i]))
+            # Verificar si la utilidad actual es mayor o igual a la utilidad del mejor cambio.
             if u_i > u_best:
                 i_best = i
+        # Retornar el índice del mejor cambio.
         return i_best
     
     def utilidad(self, vector):
+         """
+        Calcula la utilidad total en función de un vector de selección.
+        Args:
+            -vector (numpy.ndarray): Vector de selección binario que indica qué ítems están incluidos.
+        Returns:
+            -float: La utilidad total calculada.
+        """
         return self.utilidades.dot(vector)
     
     def tabu_search(self, max_iter=20, L=8):
