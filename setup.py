@@ -8,6 +8,7 @@ setup(name='knapsack_tabu',
       author_email='ve403484@uaeh.edu.mx, he354078@uaeh.edu.mx, or421454@uaeh.edu.mx, ni333297@uaeh.edu.mx, vi407515@uaeh.edu.mx',
       license='MIT',
       packages=['knapsack_tabu'],
+      install_requires=['numpy','random'],
       zip_safe=False)
 
       
