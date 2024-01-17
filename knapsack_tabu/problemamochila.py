@@ -159,3 +159,20 @@ class ProblemaMochilaMod:
 
     # Retornar la mejor solución encontrada junto con información adicional
         return X_best, self.utilidad(X_best), self.num_solucion(X_best), Curl_W
+
+    def ejecutar_con_varios_L(self, max_iter=20, max_L=8):
+        resultados = PrettyTable(['L', 'Mejor Solución Binaria', 'Mejor Solución Traducida', 'Utilidad'])
+        for L in range(1, max_L + 1):
+            mejor_solucion_binaria, utilidad = self.tabu_search(max_iter=max_iter, L=L)[:2]
+
+            # Obtener nombres de ítems para la mejor solución binaria
+            nombres_mejor_solucion = self.vector_ítems(mejor_solucion_binaria.tolist())
+
+            # Obtener utilidades de la mejor solución binaria
+            utilidades_mejor_solucion = self.utilidades[mejor_solucion_binaria.astype(bool)].tolist()
+
+            resultados.add_row([L, mejor_solucion_binaria.tolist(), nombres_mejor_solucion, utilidad])
+
+            # Ajustes manuales de ancho de columnas
+            resultados._max_width = {"Mejor Solución Binaria": 20, "Mejor Solución Traducida": 30, "Utilidades": 20, "Utilidad Total": 15}
+        return resultados
