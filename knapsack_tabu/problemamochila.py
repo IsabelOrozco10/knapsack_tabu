@@ -156,6 +156,9 @@ class ProblemaMochilaMod:
                     X_best = X.copy()
 
             c += 1
-
-    # Retornar la mejor solución encontrada junto con información adicional
+ # Retornar la mejor solución encontrada junto con información adicional
         return X_best, self.utilidad(X_best), self.num_solucion(X_best), Curl_W
+
+ def ejecutar_con_varios_L(self, max_iter=20, max_L=8):
+        resultados = PrettyTable(['L', 'Mejor Solución Binaria', 'Mejor Solución Traducida', 'Utilidad'])
+
